@@ -1,0 +1,19 @@
+#include<ESP32Wifi.h>
+
+void setup()
+{    
+  Serial.begin(9600);
+  Wifi.begin("name","password");
+  while(Wifi.status()!=WL_CONNECTED)
+{
+  Serial.print("..");
+  delay(200);
+}
+Serial.println();
+Serial.println("NODE MCU is connected");
+Serial.println(Wifi.localIP());
+}  
+
+void loop()  
+{ 
+}
